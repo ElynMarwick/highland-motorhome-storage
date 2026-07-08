@@ -630,6 +630,110 @@
       font-weight: 300;
     }
 
+    /* ── LOCAL SERVICES ── */
+    .services { background: var(--cream); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 6px;
+      padding: 2.25rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(26,46,34,0.1);
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--heather), var(--gold));
+    }
+
+    .service-card-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--heather);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--pine);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card ul {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    .service-card ul li {
+      color: #555;
+      font-size: 0.9rem;
+      font-weight: 300;
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .service-card ul li::before {
+      content: '✓';
+      color: var(--heather);
+      font-weight: 500;
+    }
+
+    .service-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--mist);
+    }
+    .service-contact a {
+      color: var(--forest);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .service-contact a:hover { color: var(--heather); }
+
+    .service-card.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--warm);
+      border-style: dashed;
+      color: #999;
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    #location { padding-bottom: 3rem; }
+    #services { padding-top: 3rem; }
+
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── CONTACT ── */
     .contact { background: var(--pine); }
     .contact .section-title { color: var(--white); }
@@ -856,6 +960,7 @@
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#vehicles">Vehicles</a></li>
       <li><a href="#location">Location</a></li>
+      <li><a href="#services">Servicing</a></li>
       <li><a href="#contact" class="nav-cta">Enquire</a></li>
     </ul>
   </nav>
@@ -1048,6 +1153,49 @@
             </div>
           </div>
           <a href="#contact" class="btn-primary">Check Availability</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <span class="section-label">While You're Here</span>
+      <h2 class="section-title">On-site servicing, no need to travel</h2>
+      <p style="color:#666; font-weight:300; max-width:600px; margin-bottom:1rem;">We work with trusted local specialists who can carry out work on your vehicle right here in storage, saving you the hassle of towing it elsewhere.</p>
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <span class="service-card-label">Approved Mobile Workshop</span>
+          <h3>Highland Motorhome & Caravan Services</h3>
+          <ul>
+            <li>On-site caravan servicing</li>
+            <li>Motorhome & campervan habitation inspections</li>
+            <li>Annual service, done in storage</li>
+            <li>AWS member 1584</li>
+          </ul>
+          <p style="color:#777; font-size:0.82rem; font-weight:300; margin-bottom:1rem; line-height:1.5;">Approved Workshop Scheme member — the only scheme supported by all major UK manufacturers.</p>
+          <div class="service-contact">
+            <span style="font-size:0.85rem; font-weight:400;">👤 David Brownless</span>
+            <a href="tel:07415330915">📞 07415330915</a>
+            <a href="https://www.hmacs.co.uk" target="_blank" rel="noopener">🌐 hmacs.co.uk</a>
+            <a href="mailto:service@hmacs.co.uk">✉️ service@hmacs.co.uk</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <span class="service-card-label">Caravan & Motorhome Care & Repairs </span>
+          <h3>Dean White</h3>
+          <ul>
+            <li>Caravan servicing</li>
+            <li>Motorhome habitation inspections</li>
+            <li>Caravan and motorhome repairs</li>
+          </ul>
+          <div class="service-contact">
+            <span style="font-size:0.85rem; font-weight:400;">👤 Dean White</span>
+            <a href="tel:07795420704">📞 07795 420704</a>
+            <a href="https://www.dwccsnairn.co.uk" target="_blank" rel="noopener">🌐 dwccsnairn.co.uk</a>
+            <a href="mailto:dwccsnairn@gmail.com">✉️ dwccsnairn@gmail.com</a>
+          </div>
         </div>
       </div>
     </div>
